@@ -1,0 +1,16 @@
+<div class="container" *ngIf="therapists.length > 0">
+    <div class="row">
+        <div class="col-lg-6 mb-4" *ngFor="let therapist of therapists">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <img [src]="therapist?.profilePicFile"/>
+                    </div>
+                    <h5 class="fw-bold mb-3">
+                        {{ therapist?.nameEn }}
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
