@@ -6,11 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
     
 export class MainService {
-    url: string = 'https://api-aws.shezlong.com/client/listTherapists?page=1';
+  url: string = 'https://api-aws.shezlong.com/client/listTherapists?page=';
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-    getTherapists() {
-        return this.http.get<any>(this.url);
-    }
+  getTherapists(page: number) {
+    return this.http.get<any>(this.url + page);
+  }
 }

@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+$main : #3da8c0;
+
+.main-text {
+    color: $main;
+}
+
 .profile-pic {
     object-fit: cover;
-    aspect-ratio: 200/200;
+    aspect-ratio: 150/150;
 }
+
