@@ -1,20 +1,63 @@
-<div class="container" *ngIf="therapists.length > 0">
+<div class="container py-5" *ngIf="therapists.length > 0">
     <div class="row align-items-center mb-4">
         <div class="col-lg-4 col-md-6 mb-4 align-self-stretch" *ngFor="let therapist of therapists">
             <div class="card h-100">
-                <div class="card-body">
+                <div class="card-body p-4">
                     <div class="mb-3 text-center">
                         <img class="d-inline-block img-fluid rounded-circle profile-pic" height="200" width="200" [src]="therapist?.profilePicFile"/>
                     </div>
-                    <h5 class="fw-bold mb-3 text-primary text-center">
+                    <h6 class="fw-bold mb-3 text-main text-center">
                         {{ therapist?.nameEn }}
-                    </h5>
+                    </h6>
                     <div class="mb-3 text-muted text-center">{{ therapist?.titleEn}} </div>
+                    <div class="row justify-content-center align-items-center mb-3">
+                        <div class="col-auto pe-0">
+                            <div class="star-rating">
+                                <div class="gray-stars">
+                                    <i class="fa fa-star ps-1" aria-hidden="true"></i>
+                                    <i class="fa fa-star ps-1" aria-hidden="true"></i>
+                                    <i class="fa fa-star ps-1" aria-hidden="true"></i>
+                                    <i class="fa fa-star ps-1" aria-hidden="true"></i>
+                                    <i class="fa fa-star ps-1" aria-hidden="true"></i>
+                            
+                                    <div class="golden-stars" [style.width.%]="therapist?.rating * 100 / 5">
+                                        <i class="fa fa-star ps-1 text-golden" aria-hidden="true"></i>
+                                        <i class="fa fa-star ps-1 text-golden" aria-hidden="true"></i>
+                                        <i class="fa fa-star ps-1 text-golden" aria-hidden="true"></i>
+                                        <i class="fa fa-star ps-1 text-golden" aria-hidden="true"></i>
+                                        <i class="fa fa-star ps-1 text-golden" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto px-2">
+                            {{ therapist?.rating }}
+                        </div>
+                        <div class="col-auto ps-0">
+                            <span class="small text-muted">
+                                ({{ therapist?.reviewsCount }} Rev)
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-center fw-bold">
+                        <span>Specialized in: </span>
+                        <span>{{ therapist?.mainSpec1En + ', ' + therapist?.mainSpec2En }}</span>
+                    </p>
+                    <div class="row align-items-center justify-content-around">
+                        <div class="col-auto">
+                            <em class="fa fa-money text-main"></em>
+                            <span class="ps-2">{{ therapist?.fees.video30 ? therapist?.fees.video30 : therapist?.fees.video60  }} {{ therapist?.currencyEn }}</span>
+                        </div>
+                        <div class="col-auto">
+                            <em class="fa fa-play text-main"></em>
+                            <span class="ps-2">{{ therapist?.finishedSessionsCount }} Sessions</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-footer p-0 border-0">
                     <div class="row justify-content-center g-0">
-                        <button class="btn btn-primary rounded-0 col">Book Now</button>
-                        <button class="btn btn-secondary rounded-0 col">View Profile</button>
+                        <button class="btn btn-main rounded-0 col">Book Now</button>
+                        <button class="btn btn-light-gray rounded-0 col">View Profile</button>
                     </div>
                 </div>
             </div>

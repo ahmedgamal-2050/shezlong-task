@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
         this.mainService.getTherapists(this.page).subscribe((res) => {
             this.therapists = res.data.therapists;
             this.pagination = res.meta.pagination;
-            console.log('pagination >>', this.pagination);
+            console.log('therapists >>', this.therapists);
         });
     }
   
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
             this.mainService.getTherapists(this.pagination.page).subscribe((res) => {
                 this.therapists = res.data.therapists;
                 this.pagination = res.meta.pagination;
-                console.log('pagination >>', this.pagination);
+                //console.log('pagination >>', this.pagination);
             });
         }
     }
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
             this.mainService.getTherapists(this.pagination.page).subscribe((res) => {
                 this.therapists = res.data.therapists;
                 this.pagination = res.meta.pagination;
-                console.log('pagination >>', this.pagination);
+                //console.log('pagination >>', this.pagination);
             });
         }
     }

@@ -1,12 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
 $main : #3da8c0;
+$light-gray: #CCCCCC;
+$dark-gray: #4E4E50;
+$golden: #fcc64a;
 
-.main-text {
+.text-main {
     color: $main;
+}
+
+.bg-main {
+    background-color: $main;
+}
+
+.btn-main {
+    background-color: $main;
+    color: #ffffff;
+}
+
+.btn-light-gray {
+    background-color: $light-gray;
+    color: $dark-gray;
 }
 
 .profile-pic {
     object-fit: cover;
-    aspect-ratio: 150/150;
+    aspect-ratio: 90/90;
+}
+
+.text-golden {
+    color: $golden;
+}
+
+.star-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .gray-stars {
+        display: flex;
+        color: $light-gray;
+        position: relative;
+    }
+
+    .golden-stars {
+        display: flex;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        transition: all 0.5s;
+    }
 }
 
